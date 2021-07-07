@@ -1,0 +1,12 @@
+version: '2.4'
+services:
+  nvme_exporter:
+    container_name: "nvme_exporter"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    network_mode: host
+    restart: unless-stopped
+    privileged: true
+    expose:
+      - "9998"
