@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nvme-exporter
+spec:
+  selector:
+    matchLabels:
+      app: nvme-exporter
+  template:
+    metadata:
+      labels:
+        app: nvme-exporter
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: nvme-exporter
+        image: "fritchie/nvme_exporter"
+        command: ["nvme_exporter"]
+        # nvme-cli requires pod to be privileged
+        securityContext:
+          privileged: true
+        ports:
+        - containerPort: 9998
+          protocol: TCP
