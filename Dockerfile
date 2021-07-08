@@ -4,7 +4,7 @@ MAINTAINER Frank R <12985912+fritchie@users.noreply.github.com>
 RUN apt-get update
 RUN apt-get -y install nvme-cli
 
-WORKDIR /go/src/fio_benchmark_exporter
+WORKDIR /go/src/nvme_exporter
 COPY . .
 
 RUN go get -d -v ./...

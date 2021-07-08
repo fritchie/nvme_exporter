@@ -141,3 +141,9 @@ nvme_warning_temp_time{device="/dev/nvme0n1"} 0
 nvme_warning_temp_time{device="/dev/nvme1n1"} 0
 nvme_warning_temp_time{device="/dev/nvme2n1"} 2
 ```
+
+### Dashboard
+
+A sample Grafana dashboard is available:
+
+[https://grafana.com/grafana/dashboards/14706](https://grafana.com/grafana/dashboards/14706)

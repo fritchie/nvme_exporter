@@ -282,7 +282,7 @@ func main() {
 		log.Fatalf("Error getting current user  %s\n", err)
 	}
 	if currentUser.Username != "root" {
-		log.Fatalf("Error: you must be root to use nvme-cli")
+		log.Fatalln("Error: you must be root to use nvme-cli")
 	}
 	// check for nvme-cli executable
 	_, err = exec.LookPath("nvme")
